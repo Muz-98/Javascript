@@ -14,7 +14,7 @@ With this project, users will be able to:
 ![Wireframe](https://github.com/Muz-98/Javascript/blob/master/assets/wireframe/Wireframe1.png)
 
 ## Architecture and Technologies
-- `Javsscript`
+- `JavaScript`
 - `D3.js`
 
 ## Implementation Timeline
