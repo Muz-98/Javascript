@@ -1,0 +1,40 @@
+.main-content-container {
+    color: white;
+    width: 300px;
+    border: 1px solid white;
+    margin: 100px 0px 0px 50px;
+}
+
+.drop1-top {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drop1-search {
+    color: white;
+    background-color: black;
+    width: 250px;
+    height: 25px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.drop1-ul-players {
+    padding: 0px;
+}
+
+.drop1-ul-players li {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px 10px 0px;
+    border: 1px solid white;
+    width: 100%;
+}
+
+.drop1-ul-players li:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
