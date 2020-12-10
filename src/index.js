@@ -2,19 +2,30 @@ import "./styles/index.scss";
 import "./styles/navbar.scss";
 import "./styles/players.scss";
 
-const nba = require('nba-api-client');
+const axios = require('axios');
+const search = 'Lebron James'
 
-console.log(nba)
-
-const jh = nba.getPlayerID("James Harden");
-
-console.log(jh)
-
-// nba.playerCareerStats({ PlayerID: 201935 }).then(data => {
-//     console.log(data).catch(err => console.log(err))
-// })
-
-const all = nba.allPlayersList().then(data => {
-    console.log(data)
+// Get player by search
+axios({
+    url: 'https://www.balldontlie.io/api/v1/players',
+    method: 'GET',
+    params: {
+        search
+    }
+}).then(data => {
+    console.log(data.data.data)
 })
-console.log(all)
+
+const num = 2994
+const season = 1990
+//Get player career stats 
+axios({
+    url: 'https://www.balldontlie.io/api/v1/season_averages',
+    method: 'GET',
+    params: {
+        season,
+        player_ids: [2931, num]
+    }
+}).then(data => {
+    console.log(data.data.data)
+})
