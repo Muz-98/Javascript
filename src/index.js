@@ -47,10 +47,7 @@ axios({
         list.appendChild(listPlayers(player))
     })
 
-            const selected = document.querySelector('.drop1-ul-players')
-            selected.addEventListener('click', (event) => {
-                console.log(event.target.innerText)
-            })
+            
 })
 
 
