@@ -1,8 +1,11 @@
 .main-content-container {
     color: white;
+    margin: 100px 0px 0px 50px;
+}
+
+.left-drop1 {
     width: 300px;
     border: 1px solid white;
-    margin: 100px 0px 0px 50px;
 }
 
 .drop1-top {
@@ -19,6 +22,11 @@
     height: 25px;
     font-size: 18px;
     margin-top: 15px;
+}
+
+.drop1-bottom {
+    overflow: scroll;
+    height: 300px;
 }
 
 .drop1-ul-players {
@@ -38,3 +46,11 @@
     cursor: pointer;
     background-color: lightgray;
 }
+
+.main-content-container {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
