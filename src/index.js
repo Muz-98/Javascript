@@ -53,22 +53,27 @@ function renderData(data) {
     let tr = document.createElement('tr')
     let th = document.createElement('th')
     let td = document.createElement('td')
+    const table = document.querySelector('.stats-table')
+    let array = []
+    array.push(Object.keys(data).map(el => {
+        let name = el.split('_').join(' ')
+        // let newName = name.slice(0, 1).toUpperCase() + name.slice(1, -1)
+        // return newName
+        return name.toUpperCase()
+    }))
+    array.push(Object.values(data))
+    console.log(array)
 
-    data.forEach(player => {
-        let titles = Object.keys(player)
-        let values = Object.values(player)
+    array.forEach(row => {
+        let tr = table.insertRow();
 
-        titles.forEach(title => {
-            th.textContent = title
-            return tr.appendChild(th)
-        })
-
-        values.forEach(value => {
-            td.textContent = value;
-            return tr.appendChild(td)
+        row.forEach(ele => {
+            let td = tr.insertCell();
+            td.innerText = ele;
         })
     })
-}
+    
+    }
 
 
 
@@ -86,8 +91,7 @@ axios({
         player_ids: [2931, num]
     }
 }).then(data => {
-    const table = document.querySelector('.stats-table')
-    table.append(renderData(data.data.data))
+    return renderData(data.data.data[0])
 })
 
 let yrs = []
