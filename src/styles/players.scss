@@ -53,4 +53,14 @@
     
 }
 
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.table-container {
+    width: 800px;
+    overflow: scroll;
+}
 
