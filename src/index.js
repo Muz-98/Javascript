@@ -18,8 +18,6 @@ axios({
 
 // Get all players
 
-
-
 function listPlayers(ele) {
     let li = document.createElement('li');
     let div = document.createElement('div')
@@ -33,27 +31,32 @@ function listPlayers(ele) {
 }
 
 
+function searchPlayers(search = "") {
 
-axios({
-    url: 'https://www.balldontlie.io/api/v1/players',
-    method: 'GET',
-    params: {
-        per_page: 100
-    }
-}).then(data => {
-    const list = document.querySelector('.drop1-ul-players')
+    axios({
+        url: 'https://www.balldontlie.io/api/v1/players',
+        method: 'GET',
+        params: {
+            search: search,
+            per_page: 25
+        }
+    }).then(data => {
+        const list = document.querySelector('.drop1-ul-players')
+        list.innerHTML = ''
+        data.data.data.forEach( player => {
+            list.appendChild(listPlayers(player))
+        })
     
-    data.data.data.forEach( player => {
-        list.appendChild(listPlayers(player))
+                const selected = document.querySelector('.drop1-ul-players')
+                selected.addEventListener('click', (event) => {
+                    console.log(event)
+                    console.log(event.target.innerText)
+                })
     })
 
-            const selected = document.querySelector('.drop1-ul-players')
-            selected.addEventListener('click', (event) => {
-                console.log(event.target.innerText)
-            })
-})
+}
 
-
+// searchPlayers()
 
 
 function renderData(data) {
@@ -103,3 +106,15 @@ for (let i = 1977; i < 2021; i++) {
 
 console.log(yrs)
 
+searchPlayers()
+const searchInput = document.getElementById('search')
+searchInput.addEventListener('keyup', event => {
+    let se = event.target.value
+    // if (se.length > 0) {
+    //     return searchPlayers(se) 
+    // } else {
+    //     return searchPlayers()
+    // }
+
+    return searchPlayers(se)
+})
