@@ -6,6 +6,9 @@
 .left-drop1 {
     width: 300px;
     border: 1px solid white;
+    background-color: rgba(255, 0, 0, 0.6);
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .drop1-top {
@@ -22,10 +25,11 @@
     height: 25px;
     font-size: 18px;
     margin-top: 15px;
+    display: block;
 }
 
 .drop1-bottom {
-    overflow: scroll;
+    overflow: auto;
     height: 300px;
 }
 
@@ -39,7 +43,7 @@
     justify-content: space-around;
     padding: 10px 0px 10px 0px;
     border: 1px solid white;
-    width: 100%;
+    width: 99%;
 }
 
 .drop1-ul-players li:hover {
@@ -59,8 +63,32 @@ table, th, td {
     padding: 5px;
 }
 
-.table-container {
-    width: 800px;
-    overflow: scroll;
+
+
+.left-drop2 {
+    color: white;
+    margin-top: 50px;
+    width: 300px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    background-color: rgba(99, 199, 199);  
+
 }
 
+.stats-options {
+    color: white;
+    font-size: 16px;
+}
+
+.stats-options ul {
+    list-style: none;
+}
+
+.stat-option-li {
+    font-size: 20px;
+}
+.op1 {
+    color: white;
+    font-size: 3px;
+    
+}
