@@ -80,10 +80,11 @@ function clickPlayer(search) {
 // searchPlayers()
 function renderData(data) {
     debugger
-    const tableContainer = document.querySelector('.table-container')
-    const table = document.createElement('table')
+    const table = document.querySelector('table')
+    // const tableContainer = document.querySelector('.table-container')
+    // const table = document.createElement('table')
     let array = []
-    tableContainer.appendChild(table)
+    // tableContainer.appendChild(table)
     array.push(Object.keys(data).map(el => {
         let name = el.split('_').join(' ')
         return name.toUpperCase()
@@ -113,12 +114,12 @@ function getStats(player) {
         method: 'GET',
         params: {
             season: 1990,
-            player_ids: player.id,
+            player_ids: [num],
         }
     }).then(data => {
-        // return renderData(data.data.data[0])
+        return renderData(data.data.data[0])
         // console.log(data)
-        return data.data.data[0]
+        // return data.data.data[0]
     })
 }
 
@@ -135,4 +136,17 @@ const searchInput = document.getElementById('search')
 searchInput.addEventListener('keyup', event => {
     let se = event.target.value
     return searchPlayers(se)
+})
+
+axios({
+    url: 'https://www.balldontlie.io/api/v1/season_averages',
+    method: 'GET',
+    params: {
+        season: 1990,
+        player_ids: [num],
+    }
+}).then(data => {
+    return renderData(data.data.data[0])
+    // console.log(data)
+    // return data.data.data[0]
 })

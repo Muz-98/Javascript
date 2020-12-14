@@ -69,12 +69,19 @@ table, th, td {
     color: white;
     margin-top: 50px;
     width: 300px;
-    font-family: sans-serif;
+    font-family: 'Bebas Neue', cursive;
     border-radius: 8px;
+    justify-content: center;
     background-color: rgba(99, 199, 199);  
+    position: relative;
 
 }
 
+.left-drop2 h2 {
+    margin: 0px 0px 0px 50px;
+
+
+}
 .stats-options {
     color: white;
     font-size: 16px;
@@ -85,7 +92,9 @@ table, th, td {
 }
 
 .stat-option-li {
-    font-size: 20px;
+    font-size: 25px;
+    font-family: 'Bebas Neue', cursive;
+    
 }
 .op1 {
     color: white;
