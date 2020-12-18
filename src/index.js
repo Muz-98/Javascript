@@ -114,7 +114,7 @@ function getStats(player) {
         method: 'GET',
         params: {
             season: 1990,
-            player_ids: [num],
+            player_ids: [player.id],
         }
     }).then(data => {
         return renderData(data.data.data[0])

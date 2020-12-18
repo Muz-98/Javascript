@@ -4,9 +4,10 @@
 }
 
 .left-drop1 {
+    color: black;
     width: 300px;
-    border: 1px solid white;
-    background-color: rgba(255, 0, 0, 0.6);
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(220, 216, 141);
     border-radius: 20px;
     overflow: hidden;
 }
@@ -72,13 +73,14 @@ table, th, td {
     font-family: 'Bebas Neue', cursive;
     border-radius: 8px;
     justify-content: center;
-    background-color: rgba(99, 199, 199);  
+    background-color: rgb(220, 216, 141);  
     position: relative;
 
 }
 
 .left-drop2 h2 {
     margin: 0px 0px 0px 50px;
+    color: black;
 
 
 }
@@ -94,10 +96,31 @@ table, th, td {
 .stat-option-li {
     font-size: 25px;
     font-family: 'Bebas Neue', cursive;
+    padding: 5px;
+    
     
 }
 .op1 {
     color: white;
-    font-size: 3px;
-    
+    font-size: 20px;
+    background-color: black;
+    border-radius: 8px;
+    width: 100px;
+    border: none;
+    padding: 5px;
+       
+}
+
+.op1:hover {
+    cursor: pointer;
+    background-color: wheat;
+}
+
+.stats-options-li:hover {
+    cursor: pointer;
+}
+
+.op1:focus {
+    background-color: red;
+    border: none;
 }
